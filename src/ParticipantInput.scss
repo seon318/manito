@@ -1,5 +1,10 @@
+.participant-input {
+  display: flex;
+}
+
 .input {
   margin-bottom: 2rem;
+  margin-left : 1rem;
   .name-input {
     font-family: 'Poor Story', system-ui;
     width: 10rem;
@@ -7,6 +12,7 @@
     margin-right: 1rem;
     border-radius: 5px;
     border: 1px solid black;
+    margin-bottom : 1rem;
   }
   .submit-btn {
     width: 5rem;

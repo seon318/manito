@@ -14,12 +14,6 @@ body {
   place-items: center;
 }
 
-h1 {
-  font-size: 5em;
-  line-height: 1.1;
-  color: #19b2e7;
-}
-
 button {
   border-radius: 10px;
   border: 2px solid transparent;

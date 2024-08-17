@@ -27,6 +27,13 @@ export default function App() {
     }
   };
 
+  const removeParticipant = (id) => {
+    const updatedParticipants = participants.filter(
+      (participant) => participant.id !== id
+    );
+    setParticipants(updatedParticipants);
+  };
+
   const assignManitto = () => {
     console.log('배정 시작');
     let isValidAssignment = false;
@@ -108,20 +115,22 @@ export default function App() {
         <>
           <ParticipantInput
             addParticipant={addParticipant}
-            participants={participants}
+            participants={participants} removeParticipant={removeParticipant}
           />
           <ManitoAssigner assignManitto={assignManitto} />
-          <FileUploader handleFileUpload={handleFileUpload}/>
+          <FileUploader handleFileUpload={handleFileUpload} />
         </>
       ) : (
         <>
           <ResultViewer assignments={assignments} />
-          <button onClick={downloadAssignments} className='download-btn'>
-            결과 다운로드
-          </button>
-          <button onClick={handleBackClick} className='back-btn'>
-            뒤로 가기
-          </button>
+          <div className='buttons'>
+            <button onClick={downloadAssignments} className='download-btn'>
+              결과 다운로드
+            </button>
+            <button onClick={handleBackClick} className='back-btn'>
+              뒤로 가기
+            </button>
+          </div>
         </>
       )}
     </div>
